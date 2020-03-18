@@ -1,0 +1,32 @@
+include(vcpkg_common_functions)
+
+vcpkg_from_github(
+    OUT_SOURCE_PATH SOURCE_PATH
+    REPO VeriBlock/alt-integration-cpp
+    REF 14db8af98203a3251ed4062a5beb90983eb9af95
+    SHA512 8ef6b1ca95087b5d8cada88069cb90bf423e7341b3060bf8ac8bc72584a4946c08f753661e66e49561e82901a51c35d126dfbcd3df573a355670f450729534ef
+    HEAD_REF master
+)
+
+
+vcpkg_configure_cmake(
+    SOURCE_PATH ${SOURCE_PATH}
+    PREFER_NINJA
+    OPTIONS
+        -DUBSAN:BOOL=OFF
+        -DTSAN:BOOL=OFF
+        -DASAN:BOOL=OFF
+        -DWITH_ROCKS:BOOL=${WITH_ROCKSDB}
+        -DTESTING:BOOL=OFF
+        -DFIND_ROCKSDB:BOOL=ON
+        -DCMAKE_DEBUG_POSTFIX=d
+)
+
+vcpkg_install_cmake()
+
+file(COPY ${CURRENT_PACKAGES_DIR}/debug/lib/cmake DESTINATION ${CURRENT_PACKAGES_DIR}/share/)
+file(COPY ${CURRENT_PACKAGES_DIR}/lib/cmake DESTINATION ${CURRENT_PACKAGES_DIR}/share/)
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/lib/cmake")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/lib/cmake")
+file(INSTALL "${SOURCE_PATH}/LICENSE" DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
