@@ -9,7 +9,7 @@ How to use:
 $ cd vcpkg/ports
 
 # dir name should be 'altintegration'
-$ git submodule add --name=altintegration https://github.com/Warchant/alt-integration-cpp-vcpkg altintegration
+$ git submodule add --name altintegration https://github.com/Warchant/alt-integration-cpp-vcpkg altintegration
 ```
 
 2. Use vcpkg:

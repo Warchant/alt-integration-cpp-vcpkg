@@ -1,4 +1,4 @@
-Source: libaltintegration
+Source: altintegration
 Version: 1.0.0
 Description: Altchain integration library.
 Build-Depends: rocksdb
