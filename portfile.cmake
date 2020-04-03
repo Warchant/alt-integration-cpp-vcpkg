@@ -3,8 +3,8 @@ include(vcpkg_common_functions)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO VeriBlock/alt-integration-cpp
-    REF b947173af2b90dfaad5c36355bcdac8963f915ba
-    SHA512 7cfaaaaac9994621403586c84f292371314d9d4d14ab4f5574df000cf64d3ed00782bd9bf3eb429523730eb149f8e4db9111fb1d7b795e235a8a65baa67e8956
+    REF e6130a2588af43f22f25475122d9590ab0da90b0
+    SHA512 f6260fcbe1c82c199278e4add1607eb376aa2a49183939ba4b3f578ac4acbc12d9460c7c8d1adff0b8098f2a0923e8226f951ce88e86306fae8880101b94fd0b
     HEAD_REF master
 )
 
