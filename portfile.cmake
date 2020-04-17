@@ -5,9 +5,9 @@ vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO VeriBlock/alt-integration-cpp
-    REF 7362db2fb529157d39d4273f45b36e0fa0f1f7f7
+    REF 3df1e1ba37e2ad43f40ceaf3d2178ea55dd3dbd4
     HEAD_REF master
-    SHA512 7635afd021b1780b37afaac4843653ffbd3ad0f832b75b01dbecfb2d90ef15950bd6b35e4f37bb196f6393828b1aa3fcdf4bac9a4694f0e848de39c4624ecac0 
+    SHA512 a93efe8fecdee7a4f0f198562732239b44cf8775006cdc058411dd184d56fefb64686683525b598b33d03b887a2328b419a43908549a2e3d256164a0bd4b2716 
     HEAD_REF master
 )
 
@@ -19,9 +19,8 @@ vcpkg_configure_cmake(
         -DTSAN:BOOL=OFF
         -DASAN:BOOL=OFF
         -DSHARED:BOOL=OFF
-        -DWITH_ROCKS:BOOL=${WITH_ROCKSDB}
         -DTESTING:BOOL=OFF
-        -DFIND_ROCKSDB:BOOL=ON
+        -DWITH_SECP256K1:BOOL=OFF
         -DCMAKE_DEBUG_POSTFIX=d
 )
 
